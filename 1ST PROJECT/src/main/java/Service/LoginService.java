@@ -32,17 +32,20 @@ public class LoginService implements Command{
 		// 4. 성공실패여부
 		if(dto != null) {
 			System.out.println("-- 로그인 성공");
-			System.out.println(dto.getMem_id());
-			System.out.println(dto.getMem_pw());
+			System.out.println("로그인 아이디 : " + dto.getMem_id());
+			System.out.println("로그인 비밀번호 : " + dto.getMem_pw());
+			System.out.println("로그인 이름 : " + dto.getMem_name());
 			
-			//HttpSession session = request.getSession();
-			// session.setAttribute("info", dto);
+			HttpSession session = request.getSession();
+			 session.setAttribute("info", dto);
+			 //MemberDTO dtot = (MemberDTO)session.getAttribute("info");
+			 // System.out.println(dtot.getMem_id());
 		}else {
 			System.out.println("-- 로그인 실패");
 		}
-		String nextpage = "goMain";
 		
 		//로그인기능 마지막줄
+		String nextpage = "goMain";
 		
 		return nextpage;
 	}

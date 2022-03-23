@@ -13,39 +13,40 @@ import javax.servlet.http.HttpSession;
 
 import Model.MemberDTO;
 
-
 @WebServlet("/goMain")
 public class goMain extends HttpServlet {
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//세션 정보
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// 세션 정보
+		System.out.println("[goMain]");
+		
 		HttpSession session = request.getSession();
 		MemberDTO dto = (MemberDTO)session.getAttribute("info");
-		
+		// System.out.println(dto.getMem_id());
+
 //		//메세지 출력
-//		if(dto != null) {
+		if(dto != null) {
 //			//로그인 상태
 //			MessageDAO dao = new MessageDAO();
 //			List<MessageDTO> msglist = dao.selectMsg(dto.getEmail());
-			
-			
-			//List에 담긴 정보 가진채로 페이지 이동
-			//forward방식으로 이동하기 전에 List 정보 저장
-			//request scope
+
+		// List에 담긴 정보 가진채로 페이지 이동
+		// forward방식으로 이동하기 전에 List 정보 저장
+		// request scope
 //			request.setAttribute("msglist", msglist);
 //			
 //			
 //			
-//		}else {
+		}else {
 //			
-//		}
-		
-		//forward 방식으로 페이지 이동
-		RequestDispatcher rd = request.getRequestDispatcher("main.html");
+		}
+
+		// forward 방식으로 페이지 이동
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
-		
-		
+
 	}
 
 }

@@ -7,7 +7,37 @@ public class MemberDTO {
 	private String mem_name;
 	private String mem_phone;
 	private String mem_type;
+	private String mem_joindate;
 	
+	public MemberDTO() {
+		super();
+	}
+	
+	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
+		this.mem_phone = mem_phone;
+	}
+	
+	public MemberDTO(String mem_id, String mem_pw) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+	}
+
+
+	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type,
+			String mem_joindate) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
+		this.mem_phone = mem_phone;
+		this.mem_type = mem_type;
+		this.mem_joindate = mem_joindate;
+	}
 	
 	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type) {
 		super();
