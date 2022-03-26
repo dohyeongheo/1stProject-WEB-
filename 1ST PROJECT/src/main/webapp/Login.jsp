@@ -9,11 +9,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>로그인 페이지</title>
-
+    
 </head>
 
 <!-- 로그인 페이지 -->
-<body class="text-center">
+<body class="text-center bg-secondary">
 
 <!-- 상단바 시작 -->
 
@@ -69,20 +69,38 @@
 
 
 <!-- 본문 시작 -->
+<!--     <div class="container" style="margin-top: 200px;"></div> -->
     <div class="container" style="margin-top: 200px;"></div>
  
 
 <form action = "LoginServiceCon.do" method = "post">
   
-  <div class="mx-auto w-25 p-3">
+  
+  <img src="img/Main_Logo.png" class="rounded mx-auto d-block" alt="...">
+  
+  
+  <!-- <div class="mx-auto w-25 p-3">
     <label for="exampleInputPassword1" class="form-label">아이디 입력</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="mem_id">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="mem_id" placeholder="아이디 입력">
     </div>
   <div class="mx-auto w-25 p-3">
     <label for="exampleInputPassword1" class="form-label">비밀번호 입력</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mem_pw">
-  </div>
-  <div class="container">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="mem_pw" placeholder="비밀번호 입력">
+  </div> -->
+  
+  <div class="form-floating mb-3 mx-auto w-25" style="margin-top:50px">
+    <input type="text" class="form-control" name="mem_id" placeholder="아이디 입력">
+    <label for="exampleInputPassword1" class="form-label">아이디 입력</label>
+    </div>
+    
+    <div class="form-floating mb-3 mx-auto w-25" style="margin-top:50px">
+    <input type="text" class="form-control" name="mem_pw" placeholder="비밀번호 입력">
+    <label for="exampleInputPassword1" class="form-label">비밀번호 입력</label>
+    </div>
+  
+  
+  
+  <div class="container" style="margin-top:50px">
 
   </div>
   <button type="submit" class="btn btn-primary">로그인</button>

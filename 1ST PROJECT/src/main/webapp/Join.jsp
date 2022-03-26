@@ -75,31 +75,35 @@ margin-top : 100px;
  
 
 <form action="JoinServiceCon.do" method="post">
-  
-  <div class="mx-auto w-25 p-3">
+    
+  <h1 class="text-center">SafeZone 회원가입 하기</h1>
+    
+  <div class="form-floating mb-3 mx-auto w-25" style="margin-top:50px">
+    <input type="text" class="form-control" name="mem_id" placeholder="아이디 입력">
     <label for="exampleInputPassword1" class="form-label">아이디 입력</label>
-    <input type="text" class="form-control" name="mem_id">
     </div>
-  <div class="mx-auto w-25 p-3">
+  <div class="form-floating mb-3 mx-auto w-25">
+    <input type="password" class="form-control" name="mem_pw" placeholder="비밀번호 입력">
     <label for="exampleInputPassword1" class="form-label">비밀번호 입력</label>
-    <input type="password" class="form-control" name="mem_pw">
   </div>
-  <div class="mx-auto w-25 p-3">
+  <div class="form-floating mb-3 mx-auto w-25">
+    <input type="password" class="form-control" name="" placeholder="비밀번호 재입력">
     <label for="exampleInputPassword1" class="form-label">비밀번호 재입력</label>
-    <input type="password" class="form-control" name="">
   </div>
-  <div class="mx-auto w-25 p-3">
+  <div class="form-floating mb-3 mx-auto w-25">
+    <input type="password" class="form-control" name="mem_name" placeholder="이름 입력">
     <label for="exampleInputPassword1" class="form-label">이름 입력</label>
-    <input type="text" class="form-control" name="mem_name">
   </div>
-  <div class="mx-auto w-25 p-3">
+  <div class="form-floating mb-3 mx-auto w-25">
+    <input type="password" class="form-control" name="mem_phone" placeholder="전화번호 입력">
     <label for="exampleInputPassword1" class="form-label">전화번호 입력</label>
-    <input type="text" class="form-control" name="mem_phone">
   </div>
   
+  <div class="container" style="margin-top:50px">
   <button type="submit" class="btn btn-primary">회원가입 하기</button>
   <button type="reset" class="btn btn-primary">초기화</button>
-  <a href="IdPwFind.jsp" class="btn btn-primary" role="button">아이디 비밀번호 찾기</a>
+  <a href="IdPwFind.jsp" class="btn btn-primary" role="button" style="margin-top:50px">아이디 비밀번호 찾기</a>
+  </div>
 </form>
 
 

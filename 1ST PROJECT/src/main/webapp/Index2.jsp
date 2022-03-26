@@ -199,19 +199,21 @@ if(info != null){
   <h4 id="scrollspyHeading5">Fifth heading</h4>
   <p>...</p> -->
   
-  <h1> 나는 자리를 차지한다 </h1>
-  <h1> 나는 자리를 차지한다 </h1>
-  <h1> 나는 자리를 차지한다 </h1>
-  <h1> 나는 자리를 차지한다 </h1>
-  <h1> 나는 자리를 차지한다 </h1>
+
 
  <!-- </div> -->
+
+<h1> 나는 자리를 차지한다 </h1>
+<h1> 나는 자리를 차지한다 </h1>
+<h1> 나는 자리를 차지한다 </h1>
+<h1> 나는 자리를 차지한다 </h1>
+<h1> 나는 자리를 차지한다 </h1>
 
 <!-- 본문 끝 -->
 
 
 <!-- 푸터 시작 -->
-<footer class="bg-dark text-white pt-5 pb-4" style="height: 250px;">
+<footer class="bg-dark text-white pt-5 pb-4" style="height:auto; margin-top:50px" >
 <!-- <div class="container-fluid d-block fixed-bottom" style="margin-top:50px"> -->
 		<div class="row" style="margin : 0px">
 			<div class="col-md-2 align-self-center">
@@ -219,25 +221,16 @@ if(info != null){
 			<div class="col-md-1 align-self-center">
 				<p class="text-center">(주) 세이프존</p>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 align-self-center">
 				<p class="text-left">대표자 : 박지형<br>
-개인정보책임관리자 : 박지형<br>
-사업자번호 : 178-82-00065<br>
-본점 : 광주 동구 예술길 31-15 3, 4, 7층<br>
-2호점 : 광주 남구 송암로 60 2층<br>
-FAX : 062-655-3510<br>
-E-Mail : smhrd@smhrd.or.kr</p>
+개인정보책임관리자 : 박지형 / 사업자번호 : 178-82-00065<br>
+본점 : 광주 동구 예술길 31-15 3, 4, 7층 / E-Mail : smhrd@smhrd.or.kr</p>
 			</div>
 			<div class="col-md-1 align-self-center">
 				<p class="text-center">고객센터</p>
 			</div>
-			<div class="col-md-3">
-				<p class="text-left">전화상담 : 062-655-3506, 9<br>
-카카오톡 : @스마트인재개발원<br>
-홈페이지 : 상담신청 메뉴 클릭<br>
-상담시간<br>
-- 전화상담 : 09시 ~ 19시 (월-금)<br>
-- 홈페이지 : 09시 ~ 19시 (월~금)<br>
+			<div class="col-md-3 align-self-center">
+				<p class="text-left">전화상담 : 062-655-3506, 9 / <br>전화 및 홈페이지상담 : 09시 ~ 19시 (월-금)<br>
 - 카카오톡 : 09시 ~ 22시 (연중무휴)</p>
 			</div>
 			<div class="col-md-2 align-self-center">
