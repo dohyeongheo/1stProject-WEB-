@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
-import Model.MemberDAO;
-import Model.MemberDTO;
+import Model.T_MemberDAO;
+import Model.T_MemberDTO;
 
 public class JoinService implements Command {
 
@@ -42,10 +42,10 @@ public class JoinService implements Command {
 		// 3. 데이터 DTO로 묶기
 		// MemberDTO dto = new MemberDTO()
 //		MemberDTO dto = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone, mem_joindate, mem_type);
-		MemberDTO dto = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone);
+		T_MemberDTO dto = new T_MemberDTO(mem_id, mem_pw, mem_name, mem_phone);
 
 		// 4. DB 연결할 DAO 호출
-		MemberDAO dao = new MemberDAO();
+		T_MemberDAO dao = new T_MemberDAO();
 		int cnt = dao.join(dto);
 
 		// 세션 선언

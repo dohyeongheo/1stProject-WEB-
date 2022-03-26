@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
-import Model.WarehouseDAO;
-import Model.WarehouseDTO;
+import Model.T_WarehouseDAO;
+import Model.T_WarehouseDTO;
 
 public class AdminWarehouseUpdate implements Command {
 	@Override
@@ -27,9 +27,9 @@ public class AdminWarehouseUpdate implements Command {
 	System.out.println("수정할 새 아이디 : " + mem_id);
 	System.out.println("수정할 새 주소 : " + w_addr);
 	
-	WarehouseDTO dto = new WarehouseDTO(w_addr, mem_id);
+	T_WarehouseDTO dto = new T_WarehouseDTO(w_addr, mem_id);
 	
-	WarehouseDAO dao = new WarehouseDAO();
+	T_WarehouseDAO dao = new T_WarehouseDAO();
 	int cnt = dao.insert(dto);
 	
 	if (cnt > 0) {

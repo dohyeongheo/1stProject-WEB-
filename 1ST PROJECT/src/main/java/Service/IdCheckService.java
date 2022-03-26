@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
-import Model.MemberDAO;
+import Model.T_MemberDAO;
 
 public class IdCheckService implements Command{
 
@@ -27,7 +27,7 @@ public class IdCheckService implements Command{
 		// MemberDAO dao = new MemberDAO();
 		// boolean result2 = dao.idCheck(email);
 		
-		boolean result = new MemberDAO().idCheck(mem_id);
+		boolean result = new T_MemberDAO().idCheck(mem_id);
 		
 		PrintWriter out = response.getWriter();
 		out.print(result);

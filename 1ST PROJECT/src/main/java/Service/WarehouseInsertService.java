@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
-import Model.MemberDAO;
-import Model.MemberDTO;
-import Model.WarehouseDAO;
-import Model.WarehouseDTO;
+import Model.T_MemberDAO;
+import Model.T_MemberDTO;
+import Model.T_WarehouseDAO;
+import Model.T_WarehouseDTO;
 
 public class WarehouseInsertService implements Command {
 
@@ -30,9 +30,9 @@ public class WarehouseInsertService implements Command {
 	System.out.println("창고에 입력할 아이디 : " + mem_id);
 	System.out.println("창고에 입력할 주소 : " + w_addr);
 	
-	WarehouseDTO dto = new WarehouseDTO(w_addr, mem_id);
+	T_WarehouseDTO dto = new T_WarehouseDTO(w_addr, mem_id);
 	
-	WarehouseDAO dao = new WarehouseDAO();
+	T_WarehouseDAO dao = new T_WarehouseDAO();
 	int cnt = dao.insert(dto);
 	
 	if (cnt > 0) {

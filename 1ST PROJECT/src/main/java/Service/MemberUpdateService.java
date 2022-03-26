@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
-import Model.MemberDAO;
-import Model.MemberDTO;
+import Model.T_MemberDAO;
+import Model.T_MemberDTO;
 
 public class MemberUpdateService implements Command {
 	@Override
@@ -25,9 +25,9 @@ public class MemberUpdateService implements Command {
 		String mem_name = request.getParameter("mem_name");
 		String mem_phone = request.getParameter("mem_phone");
 		
-		MemberDTO dto = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone);
+		T_MemberDTO dto = new T_MemberDTO(mem_id, mem_pw, mem_name, mem_phone);
 		
-		int cnt = new MemberDAO().MemberUpdate(dto);
+		int cnt = new T_MemberDAO().MemberUpdate(dto);
 		
 		if(cnt>0) {
 			System.out.println("-- 회원정보수정 성공");

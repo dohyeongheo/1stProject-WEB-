@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
-import Model.MemberDAO;
-import Model.MemberDTO;
+import Model.T_MemberDAO;
+import Model.T_MemberDTO;
 
 public class LoginService implements Command{
 	@Override
@@ -17,7 +17,7 @@ public class LoginService implements Command{
 			throws ServletException, IOException {
 		
 		//로그인 기능
-		System.out.println("[1차프로젝트 LoginServiceCon]");
+		System.out.println("[LoginServiceCon]");
 		
 		// 1. post방식 인코딩
 		request.setCharacterEncoding("UTF-8");
@@ -27,7 +27,7 @@ public class LoginService implements Command{
 		String mem_pw = request.getParameter("mem_pw");
 		
 		// 3. login메소드 호출
-		MemberDTO dto = new MemberDAO().login(mem_id, mem_pw);
+		T_MemberDTO dto = new T_MemberDAO().login(mem_id, mem_pw);
 		
 		// 4. 성공실패여부
 		if(dto != null) {

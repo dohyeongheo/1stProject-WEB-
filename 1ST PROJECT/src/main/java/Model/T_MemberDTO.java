@@ -1,6 +1,6 @@
 package Model;
 
-public class MemberDTO {
+public class T_MemberDTO {
 
 	private String mem_id;
 	private String mem_pw;
@@ -9,11 +9,11 @@ public class MemberDTO {
 	private String mem_type;
 	private String mem_joindate;
 	
-	public MemberDTO() {
+	public T_MemberDTO() {
 		super();
 	}
 	
-	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone) {
+	public T_MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
@@ -21,14 +21,14 @@ public class MemberDTO {
 		this.mem_phone = mem_phone;
 	}
 	
-	public MemberDTO(String mem_id, String mem_pw) {
+	public T_MemberDTO(String mem_id, String mem_pw) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
 	}
 
 
-	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type,
+	public T_MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type,
 			String mem_joindate) {
 		super();
 		this.mem_id = mem_id;
@@ -39,7 +39,7 @@ public class MemberDTO {
 		this.mem_joindate = mem_joindate;
 	}
 	
-	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type) {
+	public T_MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_type) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
@@ -48,7 +48,7 @@ public class MemberDTO {
 		this.mem_type = mem_type;
 	}
 	
-	public MemberDTO(String mem_id, String mem_pw, String mem_name) {
+	public T_MemberDTO(String mem_id, String mem_pw, String mem_name) {
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
 		this.mem_name = mem_name;

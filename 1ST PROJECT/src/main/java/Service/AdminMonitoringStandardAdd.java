@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
-import Model.Standard_valuseDAO;
-import Model.Standard_valuseDTO;
+import Model.T_Standard_valuseDAO;
+import Model.T_Standard_valuseDTO;
 
 public class AdminMonitoringStandardAdd implements Command {
 
@@ -34,10 +34,10 @@ public class AdminMonitoringStandardAdd implements Command {
 		// 3. 데이터 DTO로 묶기
 		// MemberDTO dto = new MemberDTO()
 //	MemberDTO dto = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone, mem_joindate, mem_type);
-		Standard_valuseDTO dto = new Standard_valuseDTO(sensor_type, st_value, w_seq);
+		T_Standard_valuseDTO dto = new T_Standard_valuseDTO(sensor_type, st_value, w_seq);
 
 		// 4. DB 연결할 DAO 호출
-		Standard_valuseDAO dao = new Standard_valuseDAO();
+		T_Standard_valuseDAO dao = new T_Standard_valuseDAO();
 		int cnt = dao.insert(dto);
 
 		// 세션 선언

@@ -4,15 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-public class Standard_valuseDAO {
+public class T_WarehouseDAO {
 
 	// 전역변수 선언
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	MemberDTO dto = null;
+	T_MemberDTO dto = null;
 	int cnt = 0;
 
 	// DB연결 메소드
@@ -50,22 +49,16 @@ public class Standard_valuseDAO {
 		}
 	}
 
-	// 센서 기준값 삽입 메소드
-
-	public int insert(Standard_valuseDTO dto) {
+	public int insert(T_WarehouseDTO dto) {
 		dbconn();
 		try {
-			System.out.println("[Standard_valuesDAO insert 메소드 실행]");
-
-			String sql = "INSERT INTO t_standard_valuse(sensor_type, st_value, w_seq) VALUES (?,?,?)";
-			psmt = conn.prepareStatement(sql);
-			System.out.println(dto.getSensor_type());
-			System.out.println(dto.getSt_value());
-			System.out.println(dto.getW_seq());
-			psmt.setString(1, dto.getSensor_type());
-			psmt.setInt(2, dto.getSt_value());
-			psmt.setInt(3, dto.getW_seq());
+			System.out.println("[WarehouseDAO insert 메소드 실행]");
 			
+			String sql = "INSERT INTO t_warehouse(w_addr, w_latitude, w_longitude, mem_id) VALUES (?,1,1,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getW_addr());
+			psmt.setString(2, dto.getMem_id());
+
 			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -74,5 +67,6 @@ public class Standard_valuseDAO {
 			dbclose();
 		}
 		return cnt;
+
 	}
 }

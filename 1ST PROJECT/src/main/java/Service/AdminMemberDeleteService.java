@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
-import Model.MemberDAO;
+import Model.T_MemberDAO;
 
 public class AdminMemberDeleteService implements Command {
 
@@ -21,7 +21,7 @@ public class AdminMemberDeleteService implements Command {
 
 		String mem_id = request.getParameter("mem_id");
 
-		MemberDAO dao = new MemberDAO();
+		T_MemberDAO dao = new T_MemberDAO();
 		int cnt = dao.MemberDelete(mem_id);
 
 		if (cnt > 0) {

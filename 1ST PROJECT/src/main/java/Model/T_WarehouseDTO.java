@@ -1,13 +1,13 @@
 package Model;
 
-public class WarehouseDTO {
+public class T_WarehouseDTO {
 
 	private String w_addr;
 	private String mem_id;
 	String w_latitude;
 	String w_longitude;
 	
-	public WarehouseDTO(String w_addr, String mem_id, String w_latitude, String w_longitude) {
+	public T_WarehouseDTO(String w_addr, String mem_id, String w_latitude, String w_longitude) {
 		super();
 		this.w_addr = w_addr;
 		this.mem_id = mem_id;
@@ -16,7 +16,7 @@ public class WarehouseDTO {
 	}
 	
 
-	public WarehouseDTO(String w_addr, String mem_id) {
+	public T_WarehouseDTO(String w_addr, String mem_id) {
 		super();
 		this.w_addr = w_addr;
 		this.mem_id = mem_id;

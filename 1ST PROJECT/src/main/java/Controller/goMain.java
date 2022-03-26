@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Model.MemberDTO;
+import Model.T_MemberDTO;
 
 @WebServlet("/goMain")
 public class goMain extends HttpServlet {
@@ -23,7 +23,7 @@ public class goMain extends HttpServlet {
 		System.out.println("[goMain]");
 		
 		HttpSession session = request.getSession();
-		MemberDTO dto = (MemberDTO)session.getAttribute("info");
+		T_MemberDTO dto = (T_MemberDTO)session.getAttribute("info");
 		// System.out.println(dto.getMem_id());
 
 //		//메세지 출력
@@ -44,7 +44,7 @@ public class goMain extends HttpServlet {
 		}
 
 		// forward 방식으로 페이지 이동
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("Index.jsp");
 		rd.forward(request, response);
 
 	}

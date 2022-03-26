@@ -12,12 +12,14 @@ import Inter.Command;
 import Service.AdminMemberDeleteService;
 import Service.AdminMonitoringStandardAdd;
 import Service.AdminWarehouseUpdate;
-import Service.IdPwFindService;
+import Service.FindId;
+import Service.FindPw;
 import Service.JoinService;
 import Service.LoginService;
 import Service.LogoutService;
 import Service.MemberUpdateService;
 import Service.WarehouseInsertService;
+import Service.t_sensorAdd;
 
 //.do로 끝나는 문자열 맵핑값을 다 포함시킴
 @WebServlet("*.do")
@@ -25,15 +27,11 @@ public class FrontController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// FrontController Pattern
-		// 1. 모든 요청을 하나의 servlet으로 정의하는 패턴
-		// 2. 중복되는 코드를 줄일수 있고, 보안을 적용할때 하나의 serlvet에서 적용할수 있다.
 
-		System.out.println("[1차 프로젝트 FrontController 실행]");
+		System.out.println("[FrontController 실행]");
 		String nextpage = "";
 		Command com = null;
 
-		// 어떤 기능을 수행하는 문자열인지 판단
 		String uri = request.getRequestURI();
 		System.out.println(uri);
 
@@ -44,48 +42,57 @@ public class FrontController extends HttpServlet {
 		System.out.println(command);
 
 		if (command.equals("LoginServiceCon.do")) {
-			// 여러객체를 불러올 필요 없이
-			// 부모 클래스가 가지고 있는 메소드를
-			// 하위 클래스가 재정의(오버라이딩)
 			System.out.println("[로그인서비스실행]");
 			com = new LoginService();
 			nextpage = com.execute(request, response);
-			System.out.println("test : " + nextpage);
+//			System.out.println("test : " + nextpage);
 		}
 
 		else if (command.equals("JoinServiceCon.do")) {
-//			1. com객체에 JoinService(); 객체 담아주기
-//			2. com에 있는 execute() 메소드 호출해서
-//			3. 리턴값 nextpage로 담아주기
 			System.out.println("[회원가입서비스실행]");
 			com = new JoinService();
 			nextpage = com.execute(request, response);
 
 		} else if (command.equals("MemberUpdateServiceCon.do")) {
+			System.out.println("[회원정보수정서비스실행]");
 			com = new MemberUpdateService();
 			nextpage = com.execute(request, response);
 			
 		} else if (command.equals("DeleteServiceCon.do")) {
+			System.out.println("[회원정보삭제서비스실행]");
 			com = new AdminMemberDeleteService();
 			nextpage = com.execute(request, response);
 
-		} else if (command.equals("IdPwFindServiceCon.do")) {
-			com = new IdPwFindService();
-			nextpage = com.execute(request, response);
 			
 		} else if (command.equals("LogoutServiceCon.do")) {
+			System.out.println("[로그아웃서비스실행]");
 			com = new LogoutService();
 			nextpage = com.execute(request, response);
+			
 		} else if (command.equals("WarehouseInsertServiceCon.do")) {
+			System.out.println("[창고정보입력서비스실행]");
 			com = new WarehouseInsertService();
 			nextpage = com.execute(request, response);
 	
 		} else if (command.equals("WarehouseUpdateServiceCon.do")) {
+			System.out.println("[창고정보수정서비스실행]");
 			com = new AdminWarehouseUpdate();
-			nextpage = com.execute(request, response); 
+			nextpage = com.execute(request, response);
+			
 		} else if (command.equals("SensorStandardSetSerivce.do")) {
+			System.out.println("[센서기준값설정서비스실행]");
 			com = new AdminMonitoringStandardAdd();
-			nextpage = com.execute(request, response); 
+			nextpage = com.execute(request, response);
+
+		} else if (command.equals("FindIdServiceCon.do")) {
+			System.out.println("[아이디찾기서비스실행]");
+			com = new FindId();
+			nextpage = com.execute(request, response);
+
+		} else if (command.equals("FindPwServiceCon.do")) {
+			System.out.println("[비밀번호찾기서비스실행]");
+			com = new FindPw();
+			nextpage = com.execute(request, response);
 		}
 		if (nextpage != null) {
 			response.sendRedirect(nextpage);
@@ -94,31 +101,3 @@ public class FrontController extends HttpServlet {
 	}
 
 }
-//		}else if(command.equals("MsgCon.do")) {
-//			
-//			com = new MsgService();
-//			nextpage = com.execute(request, response);
-//			
-//			
-//		}else if(command.equals("LogoutServiceCon.do")) {
-//			com = new LogoutService();
-//			 nextpage  = com.execute(request, response);
-//			
-//		}else if(command.equals("IdCheckServiceCon.do")) {
-//			com = new IdCheckService();
-//			nextpage = com.execute(request, response);
-//			
-//			
-//			
-//		}else if(command.equals("DeleteServiceCon.do")) {
-//			com = new DeleteService();
-//			nextpage = com.execute(request, response);
-//			
-//		}else if(command.equals("WriteBoardService.do")) {
-//			System.out.println(" 여기 ");
-//			com = new WriteBoardService();
-//			nextpage = com.execute(request, response);
-//		}
-// else if 마지막줄
-
-//}

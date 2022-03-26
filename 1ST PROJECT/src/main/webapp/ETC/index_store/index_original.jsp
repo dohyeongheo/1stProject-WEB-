@@ -30,6 +30,7 @@ if(info.getMem_id().equals("admin")){ %>
 <a href ="AdminSensorStandard.jsp">SensorStandard</a>
 <a href ="MemberMonitoring.jsp">MemberMonitoring</a>
 <a href ="AdminWarehouseInsert.jsp">WarehouseInsert</a>
+<a href ="AdminT_sensor.jsp">AdminT_sensor</a>
 <a href ="AdminWarehouseUpdate.jsp">WarehouseUpdate</a>
 <a href ="AdminMemberUpdate.jsp">AdminMemberUpdate</a>
 <a href ="LogoutServiceCon.do">Logout</a>
