@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AdminMonitoring</title>
+<title></title>
 </head>
 <body>
 	<table>

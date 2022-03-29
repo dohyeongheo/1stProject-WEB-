@@ -94,7 +94,7 @@
 					
 					<div class="mx-auto w-50 p-3">
 						<!-- <label for="exampleInputPassword1" class="form-label">전화번호 입력 </label>-->
-						 <input type="text" class="form-control" name="mem_phone" placeholder="비밀번호 입력">
+						 <input type="text" class="form-control" name="mem_phone" placeholder="전화번호 입력">
 					</div>
 
 					<button type="button" id="findid" class="btn btn-primary" style="margin-top:25px;">전송</button>

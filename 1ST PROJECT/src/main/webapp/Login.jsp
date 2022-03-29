@@ -13,7 +13,7 @@
 </head>
 
 <!-- 로그인 페이지 -->
-<body class="text-center bg-secondary">
+<body>
 
 <!-- 상단바 시작 -->
 
@@ -75,18 +75,7 @@
 
 <form action = "LoginServiceCon.do" method = "post">
   
-  
   <img src="img/Main_Logo.png" class="rounded mx-auto d-block" alt="...">
-  
-  
-  <!-- <div class="mx-auto w-25 p-3">
-    <label for="exampleInputPassword1" class="form-label">아이디 입력</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="mem_id" placeholder="아이디 입력">
-    </div>
-  <div class="mx-auto w-25 p-3">
-    <label for="exampleInputPassword1" class="form-label">비밀번호 입력</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mem_pw" placeholder="비밀번호 입력">
-  </div> -->
   
   <div class="form-floating mb-3 mx-auto w-25" style="margin-top:50px">
     <input type="text" class="form-control" name="mem_id" placeholder="아이디 입력">
@@ -100,12 +89,14 @@
   
   
   
-  <div class="container" style="margin-top:50px">
-
-  </div>
+  <!-- <div class="container" style="margin-top:50px" > -->
+  <div class="container mx-auto text-center" style="margin-top:50px">
   <button type="submit" class="btn btn-primary">로그인</button>
   <a href="IdPwFind.jsp" class="btn btn-primary" role="button">아이디 비밀번호 찾기</a>
   <a href="join.jsp" class="btn btn-primary" role="button">회원가입</a>
+  </div>
+  
+
 </form>
 <!-- 본문 끝 -->
 

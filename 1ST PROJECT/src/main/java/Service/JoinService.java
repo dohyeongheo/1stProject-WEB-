@@ -57,7 +57,7 @@ public class JoinService implements Command {
 
 		Session.setAttribute("mem_name", mem_name);
 
-			nextpage = "index.jsp";
+			nextpage = "Index.jsp";
 
 		} else {
 			System.out.println("회원가입이 실패하였습니다.");

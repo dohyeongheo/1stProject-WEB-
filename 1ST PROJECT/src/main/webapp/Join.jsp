@@ -91,18 +91,18 @@ margin-top : 100px;
     <label for="exampleInputPassword1" class="form-label">비밀번호 재입력</label>
   </div>
   <div class="form-floating mb-3 mx-auto w-25">
-    <input type="password" class="form-control" name="mem_name" placeholder="이름 입력">
+    <input type="text" class="form-control" name="mem_name" placeholder="이름 입력">
     <label for="exampleInputPassword1" class="form-label">이름 입력</label>
   </div>
   <div class="form-floating mb-3 mx-auto w-25">
-    <input type="password" class="form-control" name="mem_phone" placeholder="전화번호 입력">
+    <input type="text" class="form-control" name="mem_phone" placeholder="전화번호 입력">
     <label for="exampleInputPassword1" class="form-label">전화번호 입력</label>
   </div>
   
   <div class="container" style="margin-top:50px">
   <button type="submit" class="btn btn-primary">회원가입 하기</button>
   <button type="reset" class="btn btn-primary">초기화</button>
-  <a href="IdPwFind.jsp" class="btn btn-primary" role="button" style="margin-top:50px">아이디 비밀번호 찾기</a>
+  <a href="IdPwFind.jsp" class="btn btn-primary" role="button">아이디 비밀번호 찾기</a>
   </div>
 </form>
 

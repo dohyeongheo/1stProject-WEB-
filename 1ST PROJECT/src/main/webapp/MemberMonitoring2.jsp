@@ -77,25 +77,29 @@
 
 <!-- 본문 시작  -->
 
+<!-- 테이블 시작 -->
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<td colspan="8">
-					<h1>전체 회원 조회</h1>
+					<h1>내 창고 모니터링</h1>
 				</td>
 
 			</tr>
 		</thead>
 		<tr>
-			<td>순번</td>
-			<td>아이디</td>
-			<td>이름</td>
-			<td>전화번호</td>
-			<td>가입일자</td>
-			<td>회원 유형</td>
-			<td>정보 수정</td>
-			<td>회원 삭제</td>
+		<td>구분</td>
+			<td>마그네틱 도어센서</td>
+			<td>적외선 모션감지센서</td>
+			<td>온도 센서</td>
+			<td>습도 센서</td>
+			<td>일산화탄소 센서</td>
 		</tr>
+		
+		<tr>
+		<td>현재</td>
+<!-- 현재 센서값 받아오기 스크립틀릿 시작 -->		
+		
 		<%
 		PreparedStatement psmt = null;
 		Connection conn = null;
@@ -111,73 +115,22 @@
 
 			// 1-3. Connection객체 사용해서 DB연결!
 			conn = DriverManager.getConnection(url, dbid, dbpw);
-
+		
 			//sql준비 및 실행
-			String sql = "SELECT mem_id, mem_name, mem_phone, mem_joindate, mem_type FROM t_member";
-
-			/* SELECT sv_seq, sensor_seq, sv_data, sv_date, gate_num
-			FROM t_sensor_value */
-			/* WHERE sv_date BETWEEN 
-			TO_DATE('2015-10-01 23:59:59','yyyy/mm/dd hh24:mi:ss') AND 
-			TO_DATE('2015-11-30 23:59:59','yyyy/mm/dd hh24:mi:ss'); */
-			/* -- 또는 WHERE sv_date BETWEEN '2015-10-01' AND '2015-11-30'; */
-
+			String sql = "SELECT * FROM t_sensor_value";
+		
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
-
-			//반복문 안에서 rs객체의 요소들을 tr태그에 넣기
-			for(int i = 1; rs.next(); i++) {
-					String mem_id = rs.getString(1);
-					String mem_name = rs.getString(2);
-					String mem_phone = rs.getString(3);
-					String mem_joindate = rs.getString(4);
-					String mem_type = rs.getString(5);
-
-					/* String enMem_name = URLEncoder.encode(mem_name, "utf-8"); */
-
-					out.print("<tr>");
-					out.print("<td>" + i + "</td>");
-					out.print("<td>" + mem_id + "</td>");
-					out.print("<td>" + mem_name + "</td>");
-					out.print("<td>" + mem_phone + "</td>");
-					out.print("<td>" + mem_joindate + "</td>");
-					out.print("<td>" + mem_type + "</td>");
-					
-					String enmem_name = URLEncoder.encode(mem_name, "utf-8");
- 					out.print("<td><a href='AdminMemberUpdate.jsp?mem_id="+ mem_id +"&mem_name="+enmem_name+"&mem_phone="+mem_phone+"'>정보 수정</a></td>");
-					// out.print("<td><a href='AdminMemberUpdate.jsp?mem_num=1'>정보 수정</a></td>");
-					out.print("<td><a href='DeleteServiceCon.do?mem_id="+ mem_id +"'>삭제</a></td>");
-					out.print("</tr>");
-
-					// out.print("<td><a href='DeleteServiceCon.do?email="+ enMem_name +"'>삭제</a></td>");
-				}
-
-				
-				
-				
 			
-/*   			while (rs.next()) {
-				String mem_id = rs.getString(1);
-				String mem_name = rs.getString(2);
-				String mem_phone = rs.getString(3);
-				String mem_joindate = rs.getString(4);
-				String mem_type = rs.getString(5);
- */
-				// String enMem_name = URLEncoder.encode(mem_name, "utf-8");
-
-/* 				out.print("<tr>");
-				out.print("<td>" + mem_id + "</td>");
-				out.print("<td>" + mem_name + "</td>");
-				out.print("<td>" + mem_phone + "</td>");
-				out.print("<td>" + mem_joindate + "</td>");
-				out.print("<td>" + mem_type + "</td>");
-				out.print("<td><a href='MemberUpdateServiceCon.do?'>정보 수정</a></td>");
-				out.print("<td><a href='DeleteServiceCon.do?mem_id="+ mem_id +"'>삭제</a></td>");
-				out.print("</tr>");
-			} */
-
-			//db 연결 해제
+			String mg_sensor = rs.getString(1);
+			
+			out.print("<td>" + mg_sensor+ "</td>");			
+			out.print("<td>" + mg_sensor+ "</td>");			
+			out.print("<td>" + mg_sensor+ "</td>");			
+			out.print("<td>" + mg_sensor+ "</td>");			
+			out.print("<td>" + mg_sensor+ "</td>");			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -191,10 +144,11 @@
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		%>
-	</table>
-	
+		}			
+%>		
+<!-- 현재 센서값 받아오기 스크립틀릿 끝 --> 
+</tr>
+</table>
 
 
 

@@ -49,25 +49,45 @@ public class T_SensorDAO {
 		}
 	}
 
-	public int t_sensorAdd(T_SensorDTO dto) {
-		System.out.println("t_sensorAdd 메소드 실행]");
+	/*
+	 * public int t_sensorAdd(T_SensorDTO dto) {
+	 * System.out.println("t_sensorAdd 메소드 실행]"); dbconn(); try {
+	 * 
+	 * for (int i = 0; i<dto.getArray_sensor_type().length; i++) { String sql =
+	 * "Insert into t_sensor values (sensor_seq.nextval, device_seq.nextval, ? , ? , ?)"
+	 * ; psmt = conn.prepareStatement(sql); for (int j = 0;
+	 * j<dto.getArray_sensor_type().length; i++) { String Sensor_type =
+	 * dto.getArray_sensor_type()[i]; String Sensor_unit =
+	 * dto.getArray_sensor_unit()[i]; String Sensor_inst_date =
+	 * dto.getArray_sensor_inst_date()[i]; // console.log(Sensor_type);
+	 * psmt.setString(1, Sensor_type); psmt.setString(2, Sensor_unit);
+	 * psmt.setString(3, Sensor_inst_date); cnt = psmt.executeUpdate(); } }
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); } finally { dbclose(); } return
+	 * cnt;
+	 * 
+	 * }
+	 */
+
+	public int AddSensor(T_SensorDTO dto) {
+
+		System.out.println(dto.getSensor_type());
+		System.out.println(dto.getSensor_unit());
+		System.out.println(dto.getSensor_inst_date());
+		
 		dbconn();
 		try {
-			
-			for (int i = 0; i<dto.getArray_sensor_type().length; i++) {
-				String sql = "Insert into t_sensor values (sensor_seq.nextval, device_seq.nextval, ? , ? , ?)";
-				psmt = conn.prepareStatement(sql);
-				for (int j = 0; j<dto.getArray_sensor_type().length; i++) {
-					String Sensor_type = dto.getArray_sensor_type()[i];
-					String Sensor_unit = dto.getArray_sensor_unit()[i];
-					String Sensor_inst_date = dto.getArray_sensor_inst_date()[i];
-					// console.log(Sensor_type);
-					psmt.setString(1, Sensor_type);
-					psmt.setString(2, Sensor_unit);
-					psmt.setString(3, Sensor_inst_date);
-					cnt = psmt.executeUpdate();
-				}
-			}
+			System.out.println("T_SensorDAO 센서추가 메소드 실행");
+
+			String sql = "Insert into t_sensor(sensor_type, sensor_unit, sensor_inst_date) values (? , ? , ?)";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getSensor_type());
+			psmt.setString(2, dto.getSensor_unit());
+			psmt.setString(3, dto.getSensor_inst_date());
+
+			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,6 +95,6 @@ public class T_SensorDAO {
 			dbclose();
 		}
 		return cnt;
-
 	}
+
 }
