@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
+import Service.AddDevice;
+import Service.AddDummy;
 import Service.AddSensor;
 import Service.AdminMemberDeleteService;
 import Service.AdminMemberUpdateService;
@@ -23,7 +25,6 @@ import Service.MemberUpdateService;
 import Service.UpdatePhone;
 import Service.UpdatePw;
 import Service.WarehouseInsertService;
-import Service.t_sensorAdd;
 
 //.do로 끝나는 문자열 맵핑값을 다 포함시킴
 @WebServlet("*.do")
@@ -112,7 +113,21 @@ public class FrontController extends HttpServlet {
 			System.out.println("[관리자 센서 추가 서비스실행]");
 			com = new AddSensor();
 			nextpage = com.execute(request, response);
-		} 
+		} else if (command.equals("AddDeviceServicecon.do")) {
+			System.out.println("[관리자 디바이스 추가 서비스실행]");
+			com = new AddDevice();
+			nextpage = com.execute(request, response);
+		} else if (command.equals("AddDummyServicecon.do")) {
+			System.out.println("[더미데이터 추가 서비스실행]");
+			com = new AddDummy();
+			nextpage = com.execute(request, response);
+		}
+		
+		// else if (command.equals("AddDeviceServicecon.do")) {
+		//	System.out.println("[현재 센서값 가져오기 서비스실행]");
+		//	com = new GetCurSensorValue();
+		//	nextpage = com.execute(request, response);
+		// }
 		
 		
 		// 

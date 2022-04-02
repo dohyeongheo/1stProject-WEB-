@@ -104,6 +104,13 @@
 		PreparedStatement psmt = null;
 		Connection conn = null;
 		ResultSet rs = null;
+		String MG = "";
+		String PI = "";
+		String TM = "";
+		String HM = "";
+		String CO = "";
+		
+		
 		//db연결
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -117,19 +124,24 @@
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 		
 			//sql준비 및 실행
-			String sql = "SELECT * FROM t_sensor_value";
+			String sql = "SELECT * FROM t_sensor_value where member_id = 'test'";
 		
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
 			
-			String mg_sensor = rs.getString(1);
+			MG = rs.getString(1);
+			PI = rs.getString(1);
+			TM = rs.getString(1);
+			HM = rs.getString(1);
+			CO = rs.getString(1);
+
 			
-			out.print("<td>" + mg_sensor+ "</td>");			
-			out.print("<td>" + mg_sensor+ "</td>");			
-			out.print("<td>" + mg_sensor+ "</td>");			
-			out.print("<td>" + mg_sensor+ "</td>");			
-			out.print("<td>" + mg_sensor+ "</td>");			
+			out.print("<td>" + MG + "</td>");			
+			out.print("<td>" + PI + "</td>");			
+			out.print("<td>" + TM + "</td>");			
+			out.print("<td>" + HM + "</td>");			
+			out.print("<td>" + CO + "</td>");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

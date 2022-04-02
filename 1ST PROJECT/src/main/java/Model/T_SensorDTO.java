@@ -11,6 +11,8 @@ public T_SensorDTO() {
 	super();
 }
 
+
+
 public T_SensorDTO(String sensor_type, String sensor_unit, String sensor_inst_date) {
 	super();
 	this.sensor_type = sensor_type;

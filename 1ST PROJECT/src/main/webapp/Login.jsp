@@ -83,7 +83,7 @@
     </div>
     
     <div class="form-floating mb-3 mx-auto w-25" style="margin-top:50px">
-    <input type="text" class="form-control" name="mem_pw" placeholder="비밀번호 입력">
+    <input type="password" class="form-control" name="mem_pw" placeholder="비밀번호 입력">
     <label for="exampleInputPassword1" class="form-label">비밀번호 입력</label>
     </div>
   

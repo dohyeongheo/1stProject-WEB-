@@ -79,7 +79,7 @@ public class T_SensorDAO {
 		try {
 			System.out.println("T_SensorDAO 센서추가 메소드 실행");
 
-			String sql = "Insert into t_sensor(sensor_type, sensor_unit, sensor_inst_date) values (? , ? , ?)";
+			String sql = "Insert into t_sensor(device_seq, sensor_type, sensor_unit, sensor_inst_date) values (31, ? , ? , ?)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -97,4 +97,6 @@ public class T_SensorDAO {
 		return cnt;
 	}
 
+	
+	
 }

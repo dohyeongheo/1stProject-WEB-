@@ -26,7 +26,10 @@
 				<h3>설치일자</h3>
 			</div>
 			<div class="col">
-				<h3></h3>
+				<h3>회원 아이디</h3>
+			</div>
+			<div class="col">
+				<h3>전송</h3>
 			</div>
 		</div>
 	</div>
@@ -35,15 +38,20 @@
 		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control"
-					id="exampleFormControlInput1">
+					id="device_uid">
 			</div>
 			<div class="col">
 				<input type="text" class="form-control"
-					id="exampleFormControlInput1">
+					id="device_loc">
 			</div>
+			
 			<div class="col">
 				<input type="date" class="form-control"
-					id="exampleFormControlInput1">
+					id="device_inst_date">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control"
+					id="mem_id">
 			</div>
 			<div class="col">
 				<button type="button" class="btn btn-primary" id="add_device">전송</button>
@@ -62,11 +70,15 @@
 			<div class="col">
 				<h3>센서 설치일자</h3>
 			</div>
+			<div class="col">
+				<h3>추가</h3>
+			</div>
 		</div>
 	</div>
 
 	<div class="container-fluid">
 		<div class="row">
+			
 			<div class="col">
 				<select class="form-select" aria-label="Default select example"
 					name="sensor_type" id="sensor_type">
@@ -92,12 +104,13 @@
 			<div class="col">
 				<input type="date" class="form-control" id="sensor_inst_date">
 			</div>
-		</div>
-	</div>
-	<br>
-	<br>
+			<div class="col">
 	<button type="button" class="btn btn-primary" id="add_sensor">센서
 		추가</button>
+			
+			</div>
+		</div>
+	</div>
 
 
 	<script
@@ -107,6 +120,48 @@
 
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript">
+	
+	// 디바이스 전송 
+	
+	$('#add_device').on('click', function() {
+		
+		let device_uid = $('#device_uid').val();
+		console.log(device_uid);
+		let device_loc = $('#device_loc').val();
+		console.log(device_loc);
+		let device_inst_date = $('#device_inst_date').val();
+		console.log(device_inst_date);
+		let mem_id = $('#mem_id').val();
+		console.log(mem_id);
+		
+		
+		
+        $.ajax({
+            url: 'AddDeviceServicecon.do',
+            type: 'post',
+            data: {
+        		device_uid : device_uid,
+        		device_loc : device_loc,
+        		device_inst_date : device_inst_date,
+        		mem_id : mem_id
+            },
+            dataType: "text ",
+            success: function(changephoneresult) {
+            $('.changephoneresult').html('<div class="w-75 mx-auto p-3 alert alert-primary alert-dismissible" id="liveAlert" role="alert" style="margin-top:40px;"><strong> 변경하신 전화번호는 <br>' + changephoneresult + '입니다. </strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+            },
+            error: function() {
+            /* alert('전화번호 변경 실패'); */
+            $('.changephoneresult').html('<div class="w-75 mx-auto p-3 alert alert-primary alert-dismissible" id="liveAlert" role="alert" style="margin-top:40px;"><strong> 전화번호 변경에 실패하였습니다.<br> 재시도해주세요 </strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+            }
+
+        });
+		
+	});
+	
+	
+	
+	
+	// 센서 전송
 	$('#add_sensor').on('click', function() {
 		let sensor_type_value = $('#sensor_type option:selected').val();
 		console.log(sensor_type_value);
@@ -135,25 +190,7 @@
         });
 		
 	});
-	
-		/* async function add_sensor() {
-			let formData = new Formdata();
-			formData.append("sensor_type", "sensor_type.value");
-			formData.append("sensor_unit", "sensor_unit.value");
-			formData.append("sensor_inst_date", "sensor_inst_date.value");
-			console.log(sensor_type.value)
-			
-			const response = await fetch("/AddSensorServicecon.do" ,{
-			method : "post",
-			body : formData
-				
-			});
-			
-			const msg = await response.test();
-			msg_id.value = msg;
-			alert(msg);
 
-		} */
 	</script>
 </body>
 </html>

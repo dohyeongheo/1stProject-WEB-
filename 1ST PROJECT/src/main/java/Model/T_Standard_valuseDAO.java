@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class T_Standard_valuseDAO {
 
@@ -63,8 +63,8 @@ public class T_Standard_valuseDAO {
 			System.out.println(dto.getSt_value());
 			System.out.println(dto.getW_seq());
 			psmt.setString(1, dto.getSensor_type());
-			psmt.setInt(2, dto.getSt_value());
-			psmt.setInt(3, dto.getW_seq());
+			psmt.setString(2, dto.getSt_value());
+			psmt.setString(3, dto.getW_seq());
 			
 			cnt = psmt.executeUpdate();
 
@@ -75,4 +75,46 @@ public class T_Standard_valuseDAO {
 		}
 		return cnt;
 	}
+
+	public ArrayList<T_Standard_valuseDTO> getStandard() {
+		
+		ArrayList<T_Standard_valuseDTO> list = new ArrayList<T_Standard_valuseDTO>();
+	
+		dbconn();
+
+		try {
+			String sql = "select * from t_standard_valuse";
+			
+			// select * from (select * from t_sensor_value where sensor_seq = 1 order by sv_date desc) where rownum < 2 ;
+			
+			/*
+			 * SELECT DISTINCT a.deptno , b.dname FROM emp a , dept b WHERE a.deptno =
+			 * b.deptno AND a.sal > 1500
+			 */
+			
+			
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+
+				String st_seq = rs.getString(1);
+				String sensor_type = rs.getString(2);
+				String st_value = rs.getString(3);
+				String w_seq =rs.getString(4);
+				
+				T_Standard_valuseDTO dto = new T_Standard_valuseDTO(st_seq, sensor_type, st_value,w_seq);
+				list.add(dto);
+				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		}
+          return list;
+	}
+
+
 }
