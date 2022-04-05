@@ -2,10 +2,11 @@ package Model;
 
 public class T_SensorDTO {
 
-
-private String sensor_type;	
-private String sensor_unit;	
-private String sensor_inst_date;
+private String sensor_seq; // 센서 연번
+private String device_seq; // 디바이스 연번
+private String sensor_type;	 // 센서 타입
+private String sensor_unit;	 // 센서 단위
+private String sensor_inst_date; // 센서 설치 날자
 
 public T_SensorDTO() {
 	super();

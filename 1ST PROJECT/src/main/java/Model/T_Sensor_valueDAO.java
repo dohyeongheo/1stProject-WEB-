@@ -135,4 +135,31 @@ String sql = "SELECT * FROM (SELECT A.mem_id, B.device_seq, B.sensor_type, C.sv_
           return list;
 	}
 	
+	public void setDBSV(int Sensor_seq, float Sv_data, int Gate_num, String Mem_id) {	
+		dbconn();
+		try {
+			String sql = "insert into t_sensor_value values (T_SENSOR_VALUE_SEQ.nextval, ? , ? , systimestamp,  ?, ?) ";
+			psmt = conn.prepareStatement(sql);
+						
+			psmt.setInt(1, Sensor_seq);
+			psmt.setFloat(2, Sv_data);
+			psmt.setInt(3, Gate_num);
+			psmt.setString(4, Mem_id);
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt>0) {
+			 System.out.println("데이터 추가 성공!");
+			}else {
+				System.out.println("데이터 추가 할 것이 없음");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("[dao.setDBSV 오류!]");
+		}finally {
+			dbclose();
+		}
+	}
+	
 }

@@ -115,6 +115,40 @@ public class T_Standard_valuseDAO {
 		}
           return list;
 	}
-
+	
+	public int standardForAlert(String sensorName, float SV_Data, int W_Seq) {
+		System.out.println("[standardDAO.standardForAlert]");
+		dbconn();
+		int chk = 0;
+		try {
+			String sql = "select * from t_standard_valuse where sensor_type =? and w_seq=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, sensorName);
+			psmt.setInt(2, W_Seq);
+			
+			rs = psmt.executeQuery();
+					
+			
+			while(rs.next()) {
+				String targetSensor =rs.getString("SENSOR_TYPE");
+				float targetValue = rs.getFloat("ST_VALUE");
+				System.out.println("비교할 센서 : " + targetSensor);
+				System.out.println("비교할 기준값 : " + targetValue);
+				if(SV_Data>targetValue) {
+					chk++;
+				}
+			}
+			System.out.println("기준 초과 : " + chk);
+			return chk;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbclose();
+		}
+		return chk;
+	}
 
 }

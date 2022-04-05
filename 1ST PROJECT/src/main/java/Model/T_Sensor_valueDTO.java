@@ -10,7 +10,8 @@ public class T_Sensor_valueDTO {
 	private String mem_id;
 	private String sensor_type;
 	private String device_seq;
-		
+	
+
 	public T_Sensor_valueDTO(String device_seq, String sensor_type, String sv_data, String sv_date) {
 		super();
 		this.sv_data = sv_data;

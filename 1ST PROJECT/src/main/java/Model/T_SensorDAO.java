@@ -97,6 +97,34 @@ public class T_SensorDAO {
 		return cnt;
 	}
 
-	
+	public int getSensorSeq(int deviceNum, String sensorType) {
+		System.out.println("<sensorDAO.getSensorSeq>");
+		dbconn();
+		try {
+			
+			String sql = "select sensor_seq from t_sensor where device_seq = ? and sensor_type=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setInt(1, deviceNum);
+			psmt.setString(2, sensorType);
+			
+			rs = psmt.executeQuery();
+			
+			int sensor_seq = 0;
+			if(rs.next()) {
+				sensor_seq = rs.getInt(1);
+			}
+			
+			return sensor_seq;
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			dbclose();
+		}
+		return 0;
+	}
 	
 }

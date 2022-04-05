@@ -27,7 +27,7 @@ public class AddDeviceSensor implements Command {
 		// 센서추가 기능
 		System.out.println("[AddDeviceSensor.java]");
 		System.out.println("[AddDevice]");
-		String nextpage = "";
+		String nextpage = "AdminAddSensor.jsp"; // 아마 창고전체 조회 페이지가 들어가야 할것으로 추정됨 
 
 		// 1. post방식 인코딩
 		request.setCharacterEncoding("UTF-8");
@@ -98,6 +98,6 @@ public class AddDeviceSensor implements Command {
 		}
 		
 		
-		return null;
+		return nextpage;
 	}
 }
