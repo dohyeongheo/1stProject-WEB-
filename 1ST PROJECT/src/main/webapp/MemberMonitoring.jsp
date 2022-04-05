@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내 창고 모니터링</title>
+<title>Safe Zone</title>
 </head>
 <body>
 <%

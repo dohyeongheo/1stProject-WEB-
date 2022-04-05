@@ -13,11 +13,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<title>메인 페이지 </title>
-
-<style>
-</style>
-
+<title>Safe Zone</title>
 
 </head>
 <body>
@@ -46,9 +42,6 @@ if(info != null){
           <a class="nav-link active" aria-current="page" href="Index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AboutUs.jsp">About us</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="FAQ.jsp">FAQ</a>
         </li>
         <li class="nav-item">
@@ -60,9 +53,9 @@ if(info != null){
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="AdminMemberSelect.jsp">회원조회/수정/삭제</a></li>
+            <li><a class="dropdown-item" href="AdminAddSensor.jsp">창고 정보 추가</a></li>
             <li><a class="dropdown-item" href="#">창고 정보조회/수정/삭제</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">전체 회원창고 모니터링</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -94,9 +87,6 @@ if(info != null){
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="Index.jsp">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="AboutUs.jsp">About us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="FAQ.jsp">FAQ</a>
@@ -138,9 +128,6 @@ if(info != null){
           <a class="nav-link active" aria-current="page" href="Index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AboutUs.jsp">About us</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="FAQ.jsp">FAQ</a>
         </li>
         <li class="nav-item">
@@ -156,23 +143,25 @@ if(info != null){
 <!-- 비로그인 상단바 끝 -->
 
 <!-- 본문 시작 -->
-
-
-<div id="carouselExampleIndicators" class="mx-auto carousel slide w-50" data-bs-ride="carousel" style="margin-top : 50px">
+<div id="carouselExampleIndicators" class="mx-auto carousel slide w-100" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-  <div class="carousel-inner">
+  <div class="carousel-inner" style="width : 100%">
     <div class="carousel-item active">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg" class="d-block w-100" alt="...">
+      <img src="img/003.png" class="d-block w-100" alt="... ">
     </div>
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg" class="d-block w-100" alt="...">
+      <img src="img/002.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg" class="d-block w-100" alt="...">
+      <img src="img/004.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/005.png" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -184,6 +173,9 @@ if(info != null){
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
 
   <!-- <div data-bs-spy="scroll" data-bs-target="carouselExampleIndicators" data-bs-offset="0" class="scrollspy-example" tabindex="0"> -->
   
@@ -203,44 +195,38 @@ if(info != null){
 
  <!-- </div> -->
 
-<h1> 나는 자리를 차지한다 </h1>
-<h1> 나는 자리를 차지한다 </h1>
-<h1> 나는 자리를 차지한다 </h1>
-<h1> 나는 자리를 차지한다 </h1>
-<h1> 나는 자리를 차지한다 </h1>
-
 <!-- 본문 끝 -->
 
 
 <!-- 푸터 시작 -->
-<footer class="bg-dark text-white pt-5 pb-4" style="height:auto; margin-top:50px" >
-<!-- <div class="container-fluid d-block fixed-bottom" style="margin-top:50px"> -->
+<footer class="bg-dark text-white pt-5 pb-4 fixed-bottom" style="height:144px">
+<div class="container-fluid d-block fixed-bottom" style="margin-top:50px">
 		<div class="row" style="margin : 0px">
-			<div class="col-md-2 align-self-center">
+			<div class="col-2 align-self-center">
 			</div>
-			<div class="col-md-1 align-self-center">
+			<div class="col-1 align-self-center">
 				<p class="text-center">(주) 세이프존</p>
 			</div>
-			<div class="col-md-3 align-self-center">
+			<div class="col-3 align-self-center">
 				<p class="text-left">대표자 : 박지형<br>
 개인정보책임관리자 : 박지형 / 사업자번호 : 178-82-00065<br>
 본점 : 광주 동구 예술길 31-15 3, 4, 7층 / E-Mail : smhrd@smhrd.or.kr</p>
 			</div>
-			<div class="col-md-1 align-self-center">
+			<div class="col-1 align-self-center">
 				<p class="text-center">고객센터</p>
 			</div>
-			<div class="col-md-3 align-self-center">
+			<div class="col-3 align-self-center">
 				<p class="text-left">전화상담 : 062-655-3506, 9 / <br>전화 및 홈페이지상담 : 09시 ~ 19시 (월-금)<br>
 - 카카오톡 : 09시 ~ 22시 (연중무휴)</p>
 			</div>
-			<div class="col-md-2 align-self-center">
+			<div class="col-2 align-self-center">
 			</div>
 			
 		</div>
 
-<!-- </div> -->
+</div>
  </footer>
- <!-- 푸터 끝 -->
+<!-- 푸터 끝 -->
 
 
 	<script

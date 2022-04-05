@@ -25,6 +25,7 @@ import Service.MemberUpdateService;
 import Service.UpdatePhone;
 import Service.UpdatePw;
 import Service.WarehouseInsertService;
+import Service.deleteWarehouse;
 
 //.do로 끝나는 문자열 맵핑값을 다 포함시킴
 @WebServlet("*.do")
@@ -120,6 +121,10 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("AddDummyServicecon.do")) {
 			System.out.println("[더미데이터 추가 서비스실행]");
 			com = new AddDummy();
+			nextpage = com.execute(request, response);
+		} else if (command.equals("DeleteWareHouseServicecon.do")) {
+			System.out.println("[창고정보삭제 서비스 실행]");
+			com = new deleteWarehouse();
 			nextpage = com.execute(request, response);
 		}
 		

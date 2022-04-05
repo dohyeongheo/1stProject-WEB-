@@ -15,9 +15,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<title>전체 회원 조회</title>
+<title>Safe Zone</title>
 </head>
-<body class="text-center">
+<body class="text-center bg-secondary bg-opacity-10">
 <!-- 상단바 시작  -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -194,6 +194,38 @@
 		}
 		%>
 	</table>
+	
+<!-- 푸터 시작 -->
+<footer class="bg-dark text-white pt-5 pb-4" style="height:auto; margin-top:50px" >
+<!-- <div class="container-fluid d-block fixed-bottom" style="margin-top:50px"> -->
+		<div class="row" style="margin : 0px">
+			<div class="col-md-2 align-self-center">
+			</div>
+			<div class="col-md-1 align-self-center">
+				<p class="text-center">(주) 세이프존</p>
+			</div>
+			<div class="col-md-3 align-self-center">
+				<p class="text-left">대표자 : 박지형<br>
+개인정보책임관리자 : 박지형 / 사업자번호 : 178-82-00065<br>
+본점 : 광주 동구 예술길 31-15 3, 4, 7층 / E-Mail : smhrd@smhrd.or.kr</p>
+			</div>
+			<div class="col-md-1 align-self-center">
+				<p class="text-center">고객센터</p>
+			</div>
+			<div class="col-md-3 align-self-center">
+				<p class="text-left">전화상담 : 062-655-3506, 9 / <br>전화 및 홈페이지상담 : 09시 ~ 19시 (월-금)<br>
+- 카카오톡 : 09시 ~ 22시 (연중무휴)</p>
+			</div>
+			<div class="col-md-2 align-self-center">
+			</div>
+			
+		</div>
+
+<!-- </div> -->
+ </footer>
+ <!-- 푸터 끝 -->
+	
+	
 	
 
 

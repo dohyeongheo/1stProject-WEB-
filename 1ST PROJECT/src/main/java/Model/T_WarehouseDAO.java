@@ -69,4 +69,28 @@ public class T_WarehouseDAO {
 		return cnt;
 
 	}
+	
+	public int DeleteWarehouse(String mem_id) {
+
+		System.out.println("[T_WarehouseDAO Delete]");
+
+		dbconn();
+
+		System.out.println(mem_id);
+
+		try {
+			String sql = "delete from t_warehouse where mem_id = ? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mem_id);
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		}
+		return cnt;
+	}
+
 }

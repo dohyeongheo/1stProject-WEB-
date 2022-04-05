@@ -56,9 +56,6 @@ exec.scheduleAtFixedRate(new Runnable(){
 %> --%>
 
 	<%
-	int CO_i = 0;
-	int CO_Si = 0;
-
 	int pi_v = 0;
 	int mg_v = 0;
 	int hm_v = 0;
@@ -212,6 +209,10 @@ exec.scheduleAtFixedRate(new Runnable(){
 		console.log(co_v);
 		console.log(co_sv);
 
+		if (mg_v > mg_sv) {
+			
+			
+		}
 
 
 
@@ -234,13 +235,68 @@ exec.scheduleAtFixedRate(new Runnable(){
 		
 			
 		
-		function notify() {
+		function notify_M() {
             if (Notification.permission !== "denied") {
                 Notification.requestPermission((permission) => {
                     if (permission === "granted") {
                         const option = {
-                            body: "1번 창고 화재상황 발생",
-                            icon: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png",
+                            body: "출입문감지 센서 기준치 이상 상황",
+                        };
+                        new Notification("Safe-Zone", option);
+                    } else {
+                        alert("Notification denied");
+                    }
+                });
+            }
+        }
+		function notify_P() {
+            if (Notification.permission !== "denied") {
+                Notification.requestPermission((permission) => {
+                    if (permission === "granted") {
+                        const option = {
+                            body: "모션감지 센서 기준치 이상 상황",
+                        };
+                        new Notification("Safe-Zone", option);
+                    } else {
+                        alert("Notification denied");
+                    }
+                });
+            }
+        }
+		function notify_H() {
+            if (Notification.permission !== "denied") {
+                Notification.requestPermission((permission) => {
+                    if (permission === "granted") {
+                        const option = {
+                            body: "습도감지 센서 기준치 이상 상황",
+                        };
+                        new Notification("Safe-Zone", option);
+                    } else {
+                        alert("Notification denied");
+                    }
+                });
+            }
+        }
+		function notify_T() {
+            if (Notification.permission !== "denied") {
+                Notification.requestPermission((permission) => {
+                    if (permission === "granted") {
+                        const option = {
+                            body: "",
+                        };
+                        new Notification("Safe-Zone", option);
+                    } else {
+                        alert("Notification denied");
+                    }
+                });
+            }
+        }
+		function notify_C() {
+            if (Notification.permission !== "denied") {
+                Notification.requestPermission((permission) => {
+                    if (permission === "granted") {
+                        const option = {
+                            body: "",
                         };
                         new Notification("Safe-Zone", option);
                     } else {

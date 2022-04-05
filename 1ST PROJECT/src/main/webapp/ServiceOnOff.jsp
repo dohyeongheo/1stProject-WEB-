@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Service on off.jsp</title>
+<title>Safe Zone</title>
 </head>
 <body>
 

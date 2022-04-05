@@ -12,7 +12,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<title>아이디 비밀번호 찾기 페이지</title>
+<title>Safe Zone</title>
 
 
 </head>
