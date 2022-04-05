@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Inter.Command;
-import Service.AddDevice;
+import Service.AddDeviceSensor;
 import Service.AddDummy;
 import Service.AddSensor;
 import Service.AdminMemberDeleteService;
@@ -114,9 +114,9 @@ public class FrontController extends HttpServlet {
 			System.out.println("[관리자 센서 추가 서비스실행]");
 			com = new AddSensor();
 			nextpage = com.execute(request, response);
-		} else if (command.equals("AddDeviceServicecon.do")) {
+		} else if (command.equals("AddDeviceSensorServicecon.do")) {
 			System.out.println("[관리자 디바이스 추가 서비스실행]");
-			com = new AddDevice();
+			com = new AddDeviceSensor();
 			nextpage = com.execute(request, response);
 		} else if (command.equals("AddDummyServicecon.do")) {
 			System.out.println("[더미데이터 추가 서비스실행]");
@@ -126,20 +126,19 @@ public class FrontController extends HttpServlet {
 			System.out.println("[창고정보삭제 서비스 실행]");
 			com = new deleteWarehouse();
 			nextpage = com.execute(request, response);
-		}
-		
-		// else if (command.equals("AddDeviceServicecon.do")) {
-		//	System.out.println("[현재 센서값 가져오기 서비스실행]");
-		//	com = new GetCurSensorValue();
-		//	nextpage = com.execute(request, response);
-		// }
-		
-		
-		// 
-		if (nextpage != null) {
-			response.sendRedirect(nextpage);
+
+			// else if (command.equals("AddDeviceServicecon.do")) {
+			// System.out.println("[현재 센서값 가져오기 서비스실행]");
+			// com = new GetCurSensorValue();
+			// nextpage = com.execute(request, response);
+			// }
+
+			//
+			if (nextpage != null) {
+				response.sendRedirect(nextpage);
+			}
+
 		}
 
 	}
-
 }
