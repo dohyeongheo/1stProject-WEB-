@@ -7,23 +7,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
-import Model.T_MemberDAO;
 import Model.T_WarehouseDAO;
 
-public class deleteWarehouse implements Command {
+public class DeleteWareHouse implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("[deleteWarehouse Service]");
+		System.out.println("[DeleteWareHouse.java]");
 		
 		// 회원정보 삭제 기능
 
 		String mem_id = request.getParameter("mem_id");
-
+		String WH_Num = request.getParameter("WH_Num");
+		
 		T_WarehouseDAO dao = new T_WarehouseDAO();
-		int cnt = dao.DeleteWarehouse(mem_id);
+		int cnt = dao.DeleteWarehouse(mem_id, WH_Num);
 
 		if (cnt > 0) {
 			System.out.println("창고정보 삭제 성공");
@@ -31,7 +31,7 @@ public class deleteWarehouse implements Command {
 			System.out.println("창고정보 삭제 실패");
 		}
 
-		String nextpage = "AdminWarehouseSelect.jsp.jsp";
+		String nextpage = "AdminWarehouseSelect.jsp";
 
 		return nextpage;
 	}

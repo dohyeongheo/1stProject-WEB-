@@ -217,7 +217,7 @@ if(info != null){
 					out.print("<td>" + device_inst_date + "</td>");
 					out.print("<td><a href='AdminSensorSelect.jsp?device_seq="+device_seq+"'>센서 정보 확인</a></td>");
 					out.print("<td><a href='#'>정보 수정</a></td>");
-					out.print("<td><a href='#'>창고 삭제</a></td>");
+					out.print("<td><a href='DeleteWareHouse.do?mem_id="+mem_id+"&WH_Num="+w_seq+"'>창고 삭제</a></td>");
 					
 					// String enmem_name = URLEncoder.encode(mem_name, "utf-8");
 // 					out.print("<td><a href='AdminMemberUpdate.jsp?mem_id="+ mem_id +"&mem_name="+enmem_name+"&mem_phone="+mem_phone+"'>정보 수정</a></td>");

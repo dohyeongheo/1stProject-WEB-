@@ -70,18 +70,19 @@ public class T_WarehouseDAO {
 
 	}
 	
-	public int DeleteWarehouse(String mem_id) {
+	public int DeleteWarehouse(String mem_id, String WH_Num) {
 
 		System.out.println("[T_WarehouseDAO Delete]");
 
 		dbconn();
 
-		System.out.println(mem_id);
+		System.out.println("mem_id : " + mem_id + "\nWH_Num : " + WH_Num);
 
 		try {
-			String sql = "delete from t_warehouse where mem_id = ? ";
+			String sql = "delete from t_warehouse where mem_id = ? and w_seq = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, mem_id);
+			psmt.setString(2, WH_Num);
 
 			cnt = psmt.executeUpdate();
 
