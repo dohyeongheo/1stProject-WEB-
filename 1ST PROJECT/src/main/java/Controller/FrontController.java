@@ -16,6 +16,7 @@ import Service.AdminMemberDeleteService;
 import Service.AdminMemberUpdateService;
 import Service.AdminMonitoringStandardAdd;
 import Service.AdminWarehouseUpdate;
+import Service.DeleteSensor;
 import Service.FindId;
 import Service.FindPw;
 import Service.JoinService;
@@ -125,6 +126,10 @@ public class FrontController extends HttpServlet {
 		} else if (command.equals("DeleteWareHouse.do")) {
 			System.out.println("[창고정보삭제 서비스 실행]");
 			com = new DeleteWareHouse();
+			nextpage = com.execute(request, response);
+		} else if (command.equals("DeleteSensor.do")) {
+			System.out.println("[센서정보삭제 서비스 실행]");
+			com = new DeleteSensor();
 			nextpage = com.execute(request, response);
 		}
 			// else if (command.equals("AddDeviceServicecon.do")) {

@@ -127,4 +127,32 @@ public class T_SensorDAO {
 		return 0;
 	}
 	
+	public int deleteSensor(String sen_seq, String sensor_type) {
+		System.out.println("<sensorDAO.deleteSensor>");
+		dbconn();
+		try {
+			String sql = "delete from t_sensor where sensor_seq = ? and sensor_type=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, sen_seq);
+			psmt.setString(2, sensor_type);
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("sensorDAO. 센서 삭제 성공");
+				return cnt;
+			}else {
+				System.out.println("sensorDAO. 센서 삭제 실패");
+				return cnt;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbclose();
+		}
+		return cnt;
+	}
+	
 }

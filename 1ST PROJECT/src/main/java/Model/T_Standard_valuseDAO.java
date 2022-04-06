@@ -150,5 +150,31 @@ public class T_Standard_valuseDAO {
 		}
 		return chk;
 	}
-
+	public int deleteSensor(String sensor_type, String wh_seq) {
+		System.out.println("<StandardDAO.deleteSensor>");
+		dbconn();
+		try {
+			String sql = "delete from t_standard_valuse where sensor_type=? and w_seq = ? ";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, sensor_type);
+			psmt.setString(2, wh_seq);
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("StandardDAO. 센서 삭제 성공");
+				return cnt;
+			}else {
+				System.out.println("StandardDAO. 센서 삭제 실패");
+				return cnt;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbclose();
+		}
+		return cnt;
+	}
 }

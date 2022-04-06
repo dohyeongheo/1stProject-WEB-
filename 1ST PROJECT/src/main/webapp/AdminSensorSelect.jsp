@@ -104,8 +104,7 @@
 		ResultSet rs = null;
 		//db연결
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
+			Class.forName("oracle.jdbc.driver.OracleDriver"); 
 			// 1-2. DB에 접속하기 위한 주소, 아이디, 패스워드 지정
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "campus_b_0310_5";
@@ -150,7 +149,7 @@
 					out.print("<td>" + st_value + "</td>");
 					out.print("<td>" + device_inst_date + "</td>");
 					out.print("<td><a href='#'>센서 정보 수정</a></td>");
-					out.print("<td><a href='#'>센서 정보 삭제</a></td>");
+					out.print("<td><a href='DeleteSensor.do?sensor_seq="+sensor_seq+"&sensor_type="+sensor_type+"'>센서 정보 삭제</a></td>");
 					
 					// String enmem_name = URLEncoder.encode(mem_name, "utf-8");
 // 					out.print("<td><a href='AdminMemberUpdate.jsp?mem_id="+ mem_id +"&mem_name="+enmem_name+"&mem_phone="+mem_phone+"'>정보 수정</a></td>");

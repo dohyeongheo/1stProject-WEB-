@@ -161,5 +161,58 @@ String sql = "SELECT * FROM (SELECT A.mem_id, B.device_seq, B.sensor_type, C.sv_
 			dbclose();
 		}
 	}
+	public int deleteSensor(String sen_seq) {
+		System.out.println("<Sensor_ValueDAO.deleteSensor>");
+		dbconn();
+		try {
+			String sql = "delete from t_sensor_value where sensor_seq = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, sen_seq);
+			
+			
+			cnt = psmt.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("Sensor_ValueDAO. 센서 삭제 성공");
+				return cnt;
+			}else {
+				System.out.println("Sensor_ValueDAO. 센서 삭제 실패");
+				return cnt;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbclose();
+		}
+		return cnt;
+	}
+	
+	public String getWhNum(String sen_seq) {
+		dbconn();
+		try {
+			String sql = "select distinct gate_num from t_sensor_value where sensor_seq = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, sen_seq);
+			
+			rs = psmt.executeQuery();
+			String Wh = "";
+			if(rs.next()) {
+			 Wh = rs.getString(1);
+			 return Wh;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbclose();
+		}
+		
+		
+		return null;
+	}
 	
 }
